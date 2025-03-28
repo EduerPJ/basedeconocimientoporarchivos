@@ -1,10 +1,11 @@
 """Tests for main module."""
+
 import pytest
 
 from main import main
 
 
-def test_main(capsys):
+def test_main(capsys: pytest.CaptureFixture) -> None:
     """Test main function execution."""
     main()
     captured = capsys.readouterr()
