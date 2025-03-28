@@ -1,0 +1,30 @@
+[tool.black]
+line-length = 88
+target-version = ['py312']
+include = '\.pyi?$'
+extend-exclude = '''/(venv)/'''
+
+[tool.ruff]
+line-length = 88
+target-version = 'py312'
+select = ['E', 'F', 'I', 'D', 'UP', 'N', 'S', 'B', 'A']
+ignore = ['D203', 'D212']
+extend-exclude = ['venv']
+
+[tool.ruff.mccabe]
+max-complexity = 10
+
+[tool.ruff.pydocstyle]
+convention = 'google'
+
+[tool.ruff.per-file-ignores]
+'tests/*' = ['S101', 'D100', 'D101', 'D102', 'D103', 'D104']
+
+[tool.bandit]
+targets = ['.']
+exclude_dirs = ['venv', 'tests']
+
+[tool.pytest.ini_options]
+testpaths = 'tests'
+python_files = 'test_*.py'
+python_functions = 'test_*'
