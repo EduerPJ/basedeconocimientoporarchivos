@@ -25,3 +25,10 @@ if url and key:
             schema="public",
         ),
     )
+
+
+print(
+    "Supabase client created."
+    if supabase
+    else "Failed to create Supabase client. Check your environment variables."
+)
